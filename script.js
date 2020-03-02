@@ -8,7 +8,6 @@ var button = document.querySelector("#button")
 
 var score = 0
 var scoreHistory
-var secondsLeft
 var questionAnswer 
 
 var quizQuestions = [{
@@ -34,6 +33,35 @@ var quizQuestions = [{
 }
 ];
 
+function addButton1() {
+    var button1 = document.createElement("button")
+    button1.id = "button1"
+    button1.class = "btn btn-primary"
+    button1.innerText = "Button A"
+    answers.appendChild(button1)
+}
+function addButton2() {
+    var button2 = document.createElement("button")
+    button2.id = "button2"
+    button2.class = "btn btn-primary"
+    button2.innerText = "Button B"
+    answers.appendChild(button2)
+}
+function addButton3() {
+    var button3 = document.createElement("button")
+    button3.id = "button3"
+    button3.class = "btn btn-primary"
+    button3.innerText = "Button C"
+    answers.appendChild(button3)
+}
+function addButton4() {
+    var button4 = document.createElement("button")
+    button4.id = "button4"
+    button4.class = "btn btn-primary"
+    button4.innerText = "Button D"
+    answers.appendChild(button4)
+}
+
 function inportQuestions () {
     console.log(quizQuestions[i].question)
     question.textContent=quizQuestions[i].question
@@ -41,7 +69,22 @@ function inportQuestions () {
     document.getElementById("button2").innerText=quizQuestions[i].respOptions[1]
     document.getElementById("button3").innerText=quizQuestions[i].respOptions[2]
     document.getElementById("button4").innerText=quizQuestions[i].respOptions[3]
+}
 
+var secondsLeft = 50;
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timer.textContent = ` ${secondsLeft} seconds`;
+        if (secondsLeft <= 0 || quizOver) {
+            // if (scoreHistory.length !== 0) {
+            //     document.getElementById("view-scores").removeAttribute("disabled");
+            // }
+            timer.textContent = "";
+            clearInterval(timerInterval);
+            endOfQuiz();
+        }
+    }, 1000);
 }
 
 
@@ -49,39 +92,12 @@ function quiz() {
 
     answers.innerHTML = "";
 
-    function addButton1() {
-        var button1 = document.createElement("button")
-        button1.id = "button1"
-        button1.class = "btn btn-primary"
-        button1.innerText = "Button A"
-        answers.appendChild(button1)
-    }
-    function addButton2() {
-        var button2 = document.createElement("button")
-        button2.id = "button2"
-        button2.class = "btn btn-primary"
-        button2.innerText = "Button B"
-        answers.appendChild(button2)
-    }
-    function addButton3() {
-        var button3 = document.createElement("button")
-        button3.id = "button3"
-        button3.class = "btn btn-primary"
-        button3.innerText = "Button C"
-        answers.appendChild(button3)
-    }
-    function addButton4() {
-        var button4 = document.createElement("button")
-        button4.id = "button4"
-        button4.class = "btn btn-primary"
-        button4.innerText = "Button D"
-        answers.appendChild(button4)
-    }
-
     addButton1()
     addButton2()
     addButton3()
     addButton4()
+
+    setTime()
 
     for (i = 0; i < quizQuestions.length; i++) {
      
