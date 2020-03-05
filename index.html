@@ -23,7 +23,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="highscores-title">High Scores</h5>
+              <h5 class="modal-title" id="highscores-title">Score Board</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -33,50 +33,25 @@
                 <div class="form-row align-items-center">
                   <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Initials</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="JB">
+                    <input type="text" class="form-control mb-2" id="initials" placeholder="Initials">
                   </div>
                   <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    <button type="submitScore" id="submitInitials" class="btn btn-primary mb-2">Submit</button>
                   </div>
                 </div>
               </form>
 
-              <!-- <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Initials</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table> -->
+              <div id="scoreChart">
+                
+                <p >Initials - Score</p>
+                   
+              </div>
 
               
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal" id="restartQuiz">Restart Quiz</button>
-              <button type="button" class="btn btn-primary" id="resetScores">Reset High Scores</button>
+              <button type="button" class="btn btn-primary" id="resetScores">Reset Scores</button>
             </div>
           </div>
         </div>
