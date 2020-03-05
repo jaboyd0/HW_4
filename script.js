@@ -321,6 +321,7 @@ function quiz() {
     return}
 
 $("#submitInitials").click(function(event){
+    scoreHistory = [];
     scoreHistory.unshift(initials.value + " - " + score)
     console.log(scoreHistory)
     localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
